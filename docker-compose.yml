@@ -1,0 +1,70 @@
+version: "4"
+
+services:
+  dymension1:
+    image: ghcr.io/dymensionxyz/dymension:local
+    volumes:
+      - ./v1/:/app/v1/
+    command: dymd start --home v1 --x-crisis-skip-assert-invariants
+    networks:
+      - dymension-local
+    ports:
+      - 2101:26657
+      - 2104:1317
+      - 2102:9090
+      - 2103:9091
+      - 2105:6060
+      - 2106:9092
+      - 2100:26656
+
+  dymension2:
+    image: ghcr.io/dymensionxyz/dymension:local
+    volumes:
+      - ./v2/:/app/v2/
+    command: dymd start --home v2 --x-crisis-skip-assert-invariants
+    networks:
+      - dymension-local
+    ports:
+      - 2201:26657
+      - 2204:1317
+      - 2202:9090
+      - 2203:9091
+      - 2205:6060
+      - 2206:9092
+      - 2200:26656
+
+  dymension3:
+    image: ghcr.io/dymensionxyz/dymension:local
+    volumes:
+      - ./v3/:/app/v3/
+    command: dymd start --home v3 --x-crisis-skip-assert-invariants
+    networks:
+      - dymension-local
+    ports:
+      - 2301:26657
+      - 2304:1317
+      - 2302:9090
+      - 2303:9091
+      - 2305:6060
+      - 2306:9092
+      - 2300:26656
+  
+  dymension4:
+    image: ghcr.io/dymensionxyz/dymension:local
+    volumes:
+      - ./v4/:/app/v4/
+    command: dymd start --home v4 --x-crisis-skip-assert-invariants
+    networks:
+      - dymension-local
+    ports:
+      - 2401:26657
+      - 2404:1317
+      - 2402:9090
+      - 2403:9091
+      - 2405:6060
+      - 2406:9092
+      - 2400:26656
+
+networks:
+  dymension-local:
+    driver: bridge

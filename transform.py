@@ -252,7 +252,15 @@ def update_genesis_file(input_file, output_file, key1, key2, key3, key4, god):
 
         data['app_state']['staking']['validators'] = [validator_1, validator_2, validator_3, validator_4]
       
-    
+    '''
+    Rollapp Section
+    '''
+    data['app_state']['rollapp']['blockHeightToFinalizationQueueList'] = []
+    data['app_state']['rollapp']['latestFinalizedStateIndexList'] = []
+    data['app_state']['rollapp']['latestStateInfoIndexList'] = []
+    data['app_state']['rollapp']['rollappList'] = []
+    data['app_state']['rollapp']['stateInfoList'] = []
+
     
     '''
     Distribution section
